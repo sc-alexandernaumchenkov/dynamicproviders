@@ -23,10 +23,8 @@ jobs:
       matrix:
         dotnet-version: ['3.1.x' ]
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
- - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - name: Setup .NET Core SDK ${{ matrix.dotnet }}
       uses: actions/setup-dotnet@v1.6.0
       with:
