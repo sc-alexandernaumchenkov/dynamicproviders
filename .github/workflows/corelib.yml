@@ -32,10 +32,10 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.5
         
       - name: Restore nuget packages
-        run: nuget restore #add sln here
+        run: nuget restore #some.sln
         
       - name: Build the solution
-        run: msbuild #add sln here
+        run: msbuild #some.sln /p:Configuration=Release
         
         
         
