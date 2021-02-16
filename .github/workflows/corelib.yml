@@ -29,14 +29,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
-    - name: Change to src dir
-      run: cd src
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore src
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore src
     - name: Test
-      run: dotnet test --no-restore --verbosity normal        
+      run: dotnet test --no-restore --verbosity normal src
         
         
         
