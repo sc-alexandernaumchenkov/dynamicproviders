@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProviders", "DynamicProviders\DynamicProviders.csproj", "{515ECB66-A9E1-4667-B358-E220E209FB04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicProviders", "DynamicProviders\DynamicProviders.csproj", "{515ECB66-A9E1-4667-B358-E220E209FB04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicsProviders.UnitTests", "DynamicsProviders.UnitTests\DynamicsProviders.UnitTests.csproj", "{57FE0666-2D4C-412E-A2AB-3184D23C0770}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicsProviders.UnitTests", "DynamicsProviders.UnitTests\DynamicsProviders.UnitTests.csproj", "{57FE0666-2D4C-412E-A2AB-3184D23C0770}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProviders.MvcSample", "DynamicProviders.MvcSample\DynamicProviders.MvcSample.csproj", "{B345F1C1-54B7-4BE0-A552-B6CF4305F41B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{57FE0666-2D4C-412E-A2AB-3184D23C0770}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57FE0666-2D4C-412E-A2AB-3184D23C0770}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57FE0666-2D4C-412E-A2AB-3184D23C0770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B345F1C1-54B7-4BE0-A552-B6CF4305F41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B345F1C1-54B7-4BE0-A552-B6CF4305F41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B345F1C1-54B7-4BE0-A552-B6CF4305F41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B345F1C1-54B7-4BE0-A552-B6CF4305F41B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

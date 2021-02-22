@@ -1,0 +1,6 @@
+﻿@using Microsoft.AspNetCore.Authentication
+
+<a asp-area="" asp-controller="Home" asp-action="Protected">Protected page</a>
+
+<h2>Auth state: @User.Identity.IsAuthenticated</h2>
+<h2>User: @User.Identity.Name</h2>
