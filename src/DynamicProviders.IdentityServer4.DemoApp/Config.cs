@@ -47,12 +47,12 @@ namespace DynamicProviders.IdentityServer4.DemoApp
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     
                     // where to redirect to after login
-                    RedirectUris = { "http://localhost:56025/signin-oidc" },
+                    RedirectUris = { "https://localhost:44339/signin-oidc" },
 
                     RequirePkce = false,
 
                     // where to redirect to after logout
-                    PostLogoutRedirectUris = { "http://localhost:56025/signout-callback-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:44339/signout-callback-oidc" },
 
                     AllowedScopes = new List<string>
                     {

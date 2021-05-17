@@ -15,19 +15,20 @@ namespace DynamicProviders.NetFrameworkApp
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login")
             });
+
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             app.UseOpenIdConnectAuthentication(new OpenIdConnectAuthenticationOptions()
             {
-                Authority = "http://localhost:5001",
+                Authority = "https://localhost:5001",
                 ClientId = "mvc",
                 ClientSecret = "secret",
                 AuthenticationType = "code",
-                RequireHttpsMetadata = false,
+                //RequireHttpsMetadata = false,
                 RedeemCode = true,
                 SaveTokens = true,
-                RedirectUri = "http://localhost:56025/signin-oidc",
-                UsePkce = true,
+                RedirectUri = "https://localhost:44339/signin-oidc",
+                UsePkce = false,
                 SignInAsAuthenticationType = DefaultAuthenticationTypes.ApplicationCookie
             });
         }
