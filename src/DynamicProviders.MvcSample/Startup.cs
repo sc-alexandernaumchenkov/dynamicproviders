@@ -27,8 +27,8 @@ namespace DynamicProviders.MvcSample
                 .AddOpenIdConnect("google", options =>
                 {
                     options.Authority = "https://accounts.google.com";
-                    options.ClientId = "";
-                    options.ClientSecret = "";
+                    options.ClientId = "977551768373-hmd06e7vvr4ug46ch6geg6pjrb3tfcer.apps.googleusercontent.com";
+                    options.ClientSecret = "-sFNpf9Mcy7wKOxhmNdMCokd";
                     options.ResponseType = "code";
                     options.CallbackPath = "/signin-oidc-google";
                     options.SignedOutCallbackPath = "/signout-oidc-google";
