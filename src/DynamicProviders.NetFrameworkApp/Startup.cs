@@ -1,4 +1,7 @@
-﻿using DynamicProviders.NetFrameworkApp;
+﻿using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
+using DynamicProviders.NetFrameworkApp;
 using Microsoft.Owin;
 using Owin;
 
@@ -9,6 +12,17 @@ namespace DynamicProviders.NetFrameworkApp
     {
         public void Configuration(IAppBuilder app)
         {
+            ServicePointManager.ServerCertificateValidationCallback =
+                delegate (
+                    object s,
+                    X509Certificate certificate,
+                    X509Chain chain,
+                    SslPolicyErrors sslPolicyErrors
+                )
+                {
+                    return true;
+
+                };
             ConfigureAuth(app);
         }
     }

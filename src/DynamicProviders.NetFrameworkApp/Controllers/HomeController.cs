@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Security.Claims;
+using System.Web.Mvc;
 
 namespace DynamicProviders.NetFrameworkApp.Controllers
 {
@@ -12,7 +14,7 @@ namespace DynamicProviders.NetFrameworkApp.Controllers
         [Authorize]
         public ActionResult About()
         {
-            ViewBag.Message = $"Secured page. User: {User.Identity.Name}.";
+            ViewBag.Message = $"Secured page. User: {(User.Identity as ClaimsIdentity)?.Claims.FirstOrDefault(c => c.Type == "iss")}.";
 
             return View();
         }

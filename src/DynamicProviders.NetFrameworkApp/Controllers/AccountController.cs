@@ -5,13 +5,36 @@ using Microsoft.Owin.Security;
 
 namespace DynamicProviders.NetFrameworkApp.Controllers
 {
-    [Authorize]
+    //    [Authorize]
     public class AccountController : Controller
     {
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public void Login(string returnUrl)
         {
-            return new ChallengeResult("Auth0", returnUrl);
+            if (!Request.IsAuthenticated)
+            {
+                HttpContext.GetOwinContext().Authentication.Challenge(
+                    new AuthenticationProperties { RedirectUri = returnUrl }, "idsrv1");
+                HttpContext.Response.Cookies["provider"].Value = "idsrv1";
+            }
+
+            //            return new ChallengeResult("idsrv1", returnUrl);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public void ExternalLogin(string provider, string returnUrl)
+        {
+          // return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
+            if (!Request.IsAuthenticated)
+            {
+                HttpContext.GetOwinContext().Authentication.Challenge(
+                    new AuthenticationProperties { RedirectUri = returnUrl }, "idsrv1");
+                HttpContext.Response.Cookies["provider"].Value = "idsrv1";
+            }
+
+            //            return new ChallengeResult("idsrv1", returnUrl);
         }
 
         private const string XsrfKey = "XsrfId";
@@ -59,6 +82,7 @@ namespace DynamicProviders.NetFrameworkApp.Controllers
                     properties.Dictionary[XsrfKey] = UserId;
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
+
             }
         }
     }
